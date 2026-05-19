@@ -92,12 +92,44 @@ class Amazon3CBsrCrawler:
             if response.status_code != 200:
                 return "", f"http_{response.status_code}"
             text = response.text
-            lower = text.lower()
-            if "captcha" in lower and "enter the characters" in lower:
-                return text, "captcha"
-            if "robot check" in lower:
-                return text, "robot_check"
-            return text, "ok"
+            status = self.classify_response(text)
+            if status == "continue_shopping":
+                retry_text, retry_status = self.submit_continue_shopping(text)
+                if retry_text and retry_status == "ok":
+                    return retry_text, retry_status
+                return retry_text or text, retry_status or status
+            return text, status
+        except Exception as exc:  # noqa: BLE001
+            return "", f"error:{type(exc).__name__}:{exc}"
+
+    def classify_response(self, html: str) -> str:
+        lower = html.lower()
+        if "captcha" in lower and "enter the characters" in lower:
+            return "captcha"
+        if "robot check" in lower:
+            return "robot_check"
+        if "/errors/validatecaptcha" in lower and "continue shopping" in lower:
+            return "continue_shopping"
+        return "ok"
+
+    def submit_continue_shopping(self, html: str) -> tuple[str, str]:
+        soup = BeautifulSoup(html, "html.parser")
+        form = soup.find("form", attrs={"action": re.compile(r"/errors/validateCaptcha", re.I)})
+        if not form:
+            return html, "continue_shopping"
+        params = {
+            inp.get("name"): inp.get("value", "")
+            for inp in form.find_all("input")
+            if inp.get("name")
+        }
+        action = urljoin(BASE, form.get("action") or "/errors/validateCaptcha")
+        try:
+            response = self.session.get(action, params=params, timeout=self.timeout)
+            time.sleep(self.sleep)
+            if response.status_code != 200:
+                return "", f"http_{response.status_code}"
+            status = self.classify_response(response.text)
+            return response.text, status
         except Exception as exc:  # noqa: BLE001
             return "", f"error:{type(exc).__name__}:{exc}"
 
@@ -300,7 +332,20 @@ class Amazon3CBsrCrawler:
                     result["jsonld_currency"] = offers.get("priceCurrency", "")
         return result
 
-    def extract_product_detail(self, asin: str) -> dict[str, Any]:
+    def extract_product_detail(self, asin: str, retries: int = 0, retry_sleep: float | None = None) -> dict[str, Any]:
+        attempts = max(0, retries) + 1
+        last_product: dict[str, Any] = {}
+        for attempt in range(1, attempts + 1):
+            product = self._extract_product_detail_once(asin)
+            product["detail_attempts"] = attempt
+            last_product = product
+            if product.get("title") and product.get("image_url"):
+                return product
+            if attempt < attempts:
+                time.sleep(retry_sleep if retry_sleep is not None else max(self.sleep, 0.5))
+        return last_product
+
+    def _extract_product_detail_once(self, asin: str) -> dict[str, Any]:
         url = f"{BASE}/dp/{asin}"
         html, status = self.fetch(url)
         product: dict[str, Any] = {

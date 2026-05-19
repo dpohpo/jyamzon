@@ -8,6 +8,7 @@ import importlib.util
 import json
 import sys
 import threading
+import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -18,6 +19,15 @@ from typing import Any
 BASE_SCRIPT = Path("scripts/crawl_amazon_3c_bsr_new_releases.py")
 FILTER_SCRIPT = Path("scripts/crawl_3c_filtered_opportunities.py")
 OUTPUT_DIR = Path("data/amazon_3c/filtered_30_opportunities")
+# Stable-by-default detail fetching.
+#
+# The broad crawl previously achieved near-complete detail coverage by fetching
+# details serially with a small delay. High-concurrency detail fetching can get
+# HTTP 200 pages that parse as missing title/image, so the production default
+# favors success rate over speed. Override from CLI when doing exploratory runs.
+DETAIL_TIMEOUT = 15
+DETAIL_SLEEP = 0.35
+DETAIL_RETRIES = 2
 
 
 def load_module(path: Path, name: str):
@@ -113,14 +123,14 @@ thread_local = threading.local()
 def get_worker_crawler(base):
     crawler = getattr(thread_local, "crawler", None)
     if crawler is None:
-        crawler = base.Amazon3CBsrCrawler(timeout=9, sleep=0)
+        crawler = base.Amazon3CBsrCrawler(timeout=DETAIL_TIMEOUT, sleep=DETAIL_SLEEP)
         thread_local.crawler = crawler
     return crawler
 
 
 def enrich_candidate(base, filt, candidate: dict[str, Any]) -> dict[str, Any]:
     crawler = get_worker_crawler(base)
-    detail = crawler.extract_product_detail(candidate["asin"])
+    detail = crawler.extract_product_detail(candidate["asin"], retries=DETAIL_RETRIES, retry_sleep=max(DETAIL_SLEEP, 0.8))
     bullets = detail.get("bullet_points") or []
     row = {
         **candidate,
@@ -143,17 +153,36 @@ def download_selected_images(base, rows: list[dict[str, Any]]) -> None:
 
 
 def main() -> int:
+    global DETAIL_TIMEOUT, DETAIL_SLEEP, DETAIL_RETRIES
+    parser = argparse.ArgumentParser(description="Fast concurrent crawl for filtered 3C BSR opportunities.")
+    parser.add_argument("--max-pages", type=int, default=220)
+    parser.add_argument("--max-per-category", type=int, default=24)
+    parser.add_argument("--max-details", type=int, default=1500)
+    parser.add_argument("--detail-workers", type=int, default=1)
+    parser.add_argument("--detail-timeout", type=int, default=15)
+    parser.add_argument("--detail-sleep", type=float, default=0.35)
+    parser.add_argument("--detail-retries", type=int, default=2)
+    args = parser.parse_args()
+
+    DETAIL_TIMEOUT = args.detail_timeout
+    DETAIL_SLEEP = args.detail_sleep
+    DETAIL_RETRIES = args.detail_retries
+
     base = load_module(BASE_SCRIPT, "bsr_base_fast")
     filt = load_module(FILTER_SCRIPT, "filter_rules_fast")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    candidates, logs = collect_candidate_asins(base, filt, OUTPUT_DIR, max_pages=220, max_per_category=24)
+    candidates, logs = collect_candidate_asins(base, filt, OUTPUT_DIR, max_pages=args.max_pages, max_per_category=args.max_per_category)
     print(f"Candidate ASINs after dedupe: {len(candidates)}", flush=True)
 
     enriched: list[dict[str, Any]] = []
     rejected: list[dict[str, Any]] = []
-    max_details = min(1500, len(candidates))
-    with ThreadPoolExecutor(max_workers=14) as executor:
+    max_details = min(args.max_details, len(candidates))
+    print(
+        f"Detail fetch params: workers={args.detail_workers}, sleep={DETAIL_SLEEP}, retries={DETAIL_RETRIES}, timeout={DETAIL_TIMEOUT}",
+        flush=True,
+    )
+    with ThreadPoolExecutor(max_workers=args.detail_workers) as executor:
         future_map = {executor.submit(enrich_candidate, base, filt, candidate): candidate for candidate in candidates[:max_details]}
         done = 0
         for future in as_completed(future_map):
@@ -231,6 +260,10 @@ def main() -> int:
         "selected": len(selected),
         "rejected": len(rejected),
         "category_pages": len(logs),
+        "detail_workers": args.detail_workers,
+        "detail_sleep": DETAIL_SLEEP,
+        "detail_retries": DETAIL_RETRIES,
+        "detail_timeout": DETAIL_TIMEOUT,
     }
     write_json(OUTPUT_DIR / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)

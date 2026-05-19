@@ -57,6 +57,15 @@ python scripts/retry_filtered_opportunity_details.py
 python scripts/build_filtered_30_opportunity_excel.py
 ```
 
+The filtered crawler is stable-by-default: detail pages run with low concurrency, delay, and retry because Amazon can return HTTP 200 pages that still lack product content under aggressive request patterns. If you explicitly want speed over success rate, override:
+
+```bash
+python scripts/crawl_3c_filtered_opportunities_fast.py \
+  --detail-workers 2 \
+  --detail-sleep 0.35 \
+  --detail-retries 2
+```
+
 Output:
 
 ```text
@@ -122,6 +131,7 @@ scripts/
   crawl_3c_filtered_opportunities_fast.py  # concurrent opportunity crawl
   retry_filtered_opportunity_details.py    # slow retry for blocked/missing detail pages
   build_filtered_30_opportunity_excel.py   # curated 30-opportunity Excel builder
+  benchmark_detail_fetch_params.py         # tests detail-page workers/sleep success rate
   run_claude_crawler_audit.py              # optional crawler coverage audit
   install_claude_skill.sh                  # installs skills/jyamzon into ~/.claude/skills
 

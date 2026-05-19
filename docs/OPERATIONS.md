@@ -18,6 +18,27 @@ python scripts/retry_filtered_opportunity_details.py
 python scripts/build_filtered_30_opportunity_excel.py
 ```
 
+`crawl_3c_filtered_opportunities_fast.py` is stable-by-default for detail pages:
+
+```text
+--detail-workers 1
+--detail-sleep 0.35
+--detail-timeout 15
+--detail-retries 2
+```
+
+This follows the broad crawl pattern that previously produced high detail-field coverage. Increase workers only when speed matters more than completeness.
+
+Current measured speed option after the `Continue shopping` handling fix:
+
+```text
+--detail-workers 2
+--detail-sleep 0.35
+--detail-retries 2
+```
+
+On a 40-ASIN stress sample this reached 100% core success, where core success means both title and image parsed. Keep the one-worker default for production runs when completeness matters most.
+
 ## Expected Outputs
 
 ```text
@@ -57,6 +78,21 @@ Actions:
 2. Run `retry_filtered_opportunity_details.py`.
 3. Inspect the generated JSON logs.
 4. Do not treat missing fields as product truth.
+
+## Benchmark Detail Fetching
+
+To test alternate detail-page settings:
+
+```bash
+python scripts/benchmark_detail_fetch_params.py \
+  --sample-size 80 \
+  --retries 1 \
+  --combo 1:0.35 \
+  --combo 2:0.35 \
+  --combo 4:0.35
+```
+
+Use `core_success_rate` as the primary metric. It requires both title and image to parse, so HTTP 200 pages with missing product content count as failures.
 
 ## Employee Workflow
 

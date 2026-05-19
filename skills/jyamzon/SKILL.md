@@ -39,6 +39,8 @@ python scripts/retry_filtered_opportunity_details.py
 python scripts/build_filtered_30_opportunity_excel.py
 ```
 
+The filtered crawler defaults to stable detail fetching: one detail worker, 0.35s sleep, 15s timeout, and 2 retries. Keep those defaults when the user prioritizes completeness. A measured speed option is `--detail-workers 2 --detail-sleep 0.35 --detail-retries 2`; avoid higher concurrency unless you re-run the benchmark.
+
 ## Workflow
 
 1. Start with `crawl_amazon_3c_bsr_new_releases.py` to map 50-100 visible 3C categories.
@@ -53,6 +55,7 @@ python scripts/build_filtered_30_opportunity_excel.py
    - final selected count
    - key data limitations
 7. If the user asks what crawler-only data can replace MCP/API calls, run `scripts/run_claude_crawler_audit.py --skip-reviews` when a Claude Amazon crawler is available, then summarize field coverage and gaps.
+8. If detail-page success drops, run `scripts/benchmark_detail_fetch_params.py` and compare `core_success_rate` across workers/sleep settings before changing production defaults.
 
 ## Hard Filters
 
