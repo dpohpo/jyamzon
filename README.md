@@ -146,6 +146,7 @@ examples/raw/                              # sample raw JSON/CSV artifacts from 
 ## Operational Notes
 
 - Amazon pages can return empty/captcha/sign-in pages. The scripts keep status fields and retry paths because public scraping is not deterministic.
+- Broad crawl now uses ranking-card fields as fallback when a product detail page returns sparse or bot-block text. This can recover title/image/rating/review-count for triage, but it does not recover bullets or true detail-page-only fields.
 - Use `detail_error` to distinguish captcha, sign-in, unavailable pages, and parser drift instead of assuming every missing title has the same cause.
 - If normal retry is not enough, plan bounded retry shards with `scripts/plan_retry_shards.py`, run shard commands separately, merge with `scripts/merge_retry_shards.py`, then rebuild and verify the Excel workbook.
 - Do not treat New Releases rank as proof of demand.

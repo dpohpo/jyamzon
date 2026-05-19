@@ -31,6 +31,8 @@ python scripts/crawl_amazon_3c_bsr_new_releases.py --target 90 --min 50
 python scripts/build_3c_bsr_excel.py
 ```
 
+If product detail pages are sparse, broad crawl should still use ranking-card fallback fields. Report `fallback_source=category_card` separately from true detail-page fields.
+
 Filtered opportunity crawl:
 
 ```bash
@@ -98,3 +100,5 @@ High-risk categories such as wireless, Bluetooth, Wi-Fi, power strips, chargers,
 Be explicit that BSR/New Releases rank is not demand proof. It is only a discovery signal. Recommend paid-data validation only after the crawler creates a shortlist.
 
 When detail fields are missing, report `detail_error` categories such as `captcha`, `sign_in_page`, `not_found_or_unavailable`, or `missing_title_parse`. Do not collapse all missing titles into one cause without evidence.
+
+If `fallback_source=category_card` appears, say that the row has triage-level title/image/rating/review data from the ranking page, not full product-detail enrichment.

@@ -48,6 +48,18 @@ Detail-page failures should be classified by `detail_error`, not just counted as
 
 This lets operators distinguish Amazon blocking, unavailable pages, and parser drift.
 
+## Ranking-Card Fallback
+
+When detail pages are sparse but ranking/category pages are readable, broad crawl uses the product card as a fallback source for:
+
+- title
+- image URL
+- rating
+- review count
+- sometimes price
+
+Rows populated this way include `fallback_source=category_card` and `fallback_fields`. Treat these as triage fields. They are strong enough to identify and filter products, but they do not replace bullets, BSR detail text, or product-page validation.
+
 ## Distributed Retry Strategy
 
 Use distributed retry only after the fast crawler has produced `candidate_asins.json`. Do not run many high-concurrency workers against the same pages. Prefer slow, bounded, auditable shards.

@@ -49,6 +49,11 @@ class CategoryPick:
     depth: int
     fetch_status: str
     fetch_note: str = ""
+    card_title: str = ""
+    card_price: str = ""
+    card_rating: str = ""
+    card_review_count: str = ""
+    card_image_url: str = ""
 
 
 ROOTS = [
@@ -187,6 +192,66 @@ class Amazon3CBsrCrawler:
 
         return ordered_asins, children
 
+    def extract_category_card_detail(self, html: str, asin: str) -> dict[str, str]:
+        """Extract public ranking-card fields for an ASIN as detail-page fallback."""
+        soup = BeautifulSoup(html, "html.parser")
+        candidates = []
+        for el in soup.find_all(attrs={"data-asin": asin}):
+            candidates.append(el)
+        for link in soup.find_all("a", href=re.compile(rf"/(?:dp|gp/product)/{asin}")):
+            current = link
+            for _ in range(8):
+                if current is None:
+                    break
+                if current.name in {"div", "li"}:
+                    candidates.append(current)
+                current = current.parent
+
+        seen: set[int] = set()
+        for card in candidates:
+            if id(card) in seen:
+                continue
+            seen.add(id(card))
+            text = self.clean_text(card.get_text(" ", strip=True))
+            img = card.find("img")
+            title = ""
+            if img:
+                alt = self.clean_text(img.get("alt", ""))
+                if alt and asin not in alt:
+                    title = alt
+            if not title:
+                for selector in [".p13n-sc-truncate", '[class*="line-clamp"]', "h2", "a span"]:
+                    title_el = card.select_one(selector)
+                    title = self.clean_text(title_el.get_text(" ", strip=True)) if title_el else ""
+                    if title and asin not in title:
+                        break
+
+            price = ""
+            price_el = card.select_one(".p13n-sc-price, .a-price .a-offscreen")
+            if price_el:
+                price = self.clean_text(price_el.get_text(" ", strip=True))
+
+            rating = ""
+            rating_match = re.search(r"(\d(?:\.\d)?) out of 5 stars", text)
+            if rating_match:
+                rating = rating_match.group(1)
+
+            review_count = ""
+            reviews_match = re.search(r"out of 5 stars\s+([\d,]+)", text)
+            if reviews_match:
+                review_count = reviews_match.group(1)
+
+            image_url = img.get("src", "") if img else ""
+            if title or image_url or price or rating or review_count:
+                return {
+                    "title": title,
+                    "price": price,
+                    "rating": rating,
+                    "review_count": review_count,
+                    "image_url": image_url,
+                }
+        return {}
+
     def discover_categories(self, target_count: int, min_count: int, max_pages: int) -> tuple[list[CategoryPick], list[dict[str, Any]]]:
         picks: list[CategoryPick] = []
         logs: list[dict[str, Any]] = []
@@ -230,6 +295,7 @@ class Amazon3CBsrCrawler:
                     rank = idx
                     break
             if chosen_asin:
+                card_detail = self.extract_category_card_detail(html, chosen_asin)
                 used_asins.add(chosen_asin)
                 picks.append(
                     CategoryPick(
@@ -244,6 +310,11 @@ class Amazon3CBsrCrawler:
                         page_asin_count=len(asins),
                         depth=task.depth,
                         fetch_status=status,
+                        card_title=card_detail.get("title", ""),
+                        card_price=card_detail.get("price", ""),
+                        card_rating=card_detail.get("rating", ""),
+                        card_review_count=card_detail.get("review_count", ""),
+                        card_image_url=card_detail.get("image_url", ""),
                     )
                 )
                 print(f"[category {len(picks):03d}] {task.source} | {task.path} -> {chosen_asin}", flush=True)
@@ -522,10 +593,27 @@ def main() -> int:
         print("[2/2] Fetching product details and images", flush=True)
         for index, pick in enumerate(picks, start=1):
             print(f"[detail {index:03d}/{len(picks):03d}] {pick.asin} | {pick.category_path}", flush=True)
+            pick_data = asdict(pick)
             detail = crawler.extract_product_detail(pick.asin)
+            fallback_fields = []
+            for detail_key, card_key in [
+                ("title", "card_title"),
+                ("price", "card_price"),
+                ("rating", "card_rating"),
+                ("review_count", "card_review_count"),
+                ("image_url", "card_image_url"),
+            ]:
+                if not detail.get(detail_key) and pick_data.get(card_key):
+                    detail[detail_key] = pick_data[card_key]
+                    fallback_fields.append(detail_key)
+            if fallback_fields:
+                detail["fallback_source"] = "category_card"
+                detail["fallback_fields"] = ",".join(fallback_fields)
+                if detail.get("detail_error"):
+                    detail["detail_error"] = f"{detail['detail_error']};category_card_fallback"
             local_image = crawler.download_image(pick.asin, detail.get("image_url", ""), output_dir / "images")
             row = {
-                **asdict(pick),
+                **pick_data,
                 **detail,
                 "bullet_1": (detail.get("bullet_points") or [""])[0] if detail.get("bullet_points") else "",
                 "bullet_2": (detail.get("bullet_points") or ["", ""])[1] if len(detail.get("bullet_points") or []) > 1 else "",
@@ -567,6 +655,13 @@ def main() -> int:
         "fetch_status",
         "detail_status",
         "detail_error",
+        "fallback_source",
+        "fallback_fields",
+        "card_title",
+        "card_price",
+        "card_rating",
+        "card_review_count",
+        "card_image_url",
     ]
     write_csv(output_dir / "products.csv", products, fields)
     write_csv(output_dir / "category_picks.csv", [asdict(pick) for pick in picks], list(asdict(picks[0]).keys()) if picks else [])
@@ -581,6 +676,7 @@ def main() -> int:
             "products_with_five_bullets": sum(1 for product in products if product.get("bullet_5")),
             "products_with_image": sum(1 for product in products if product.get("image_url")),
             "products_with_local_image": sum(1 for product in products if product.get("local_image")),
+            "products_with_category_card_fallback": sum(1 for product in products if product.get("fallback_source") == "category_card"),
             "category_pages_attempted": len(category_logs),
             "output_dir": str(output_dir),
         }
