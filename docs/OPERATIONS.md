@@ -13,9 +13,7 @@ python scripts/crawl_amazon_3c_bsr_new_releases.py \
 
 python scripts/build_3c_bsr_excel.py
 
-python scripts/crawl_3c_filtered_opportunities_fast.py
-python scripts/retry_filtered_opportunity_details.py
-python scripts/build_filtered_30_opportunity_excel.py
+python scripts/run_filtered_30_pipeline.py --target 30 --retry-passes 2
 ```
 
 ## Expected Outputs
@@ -24,6 +22,21 @@ python scripts/build_filtered_30_opportunity_excel.py
 outputs/amazon_3c_bsr_new_releases/amazon_3c_new_releases_bsr_crawl.xlsx
 outputs/amazon_3c_filtered_opportunities/amazon_3c_bsr_filtered_30_opportunities.xlsx
 ```
+
+## Verification Gate
+
+Before calling the run complete:
+
+```bash
+python scripts/verify_crawl_outputs.py --target 30
+```
+
+This checks that:
+
+- broad crawl Excel matches the broad summary ASIN count
+- `selected_30.json`, `selected_30_curated.json`, and the final Excel agree
+- the filtered workbook contains at least 30 unique ASINs
+- there are no duplicate ASINs in the final workbook
 
 ## Optional Claude Crawler Audit
 
@@ -57,6 +70,20 @@ Actions:
 2. Run `retry_filtered_opportunity_details.py`.
 3. Inspect the generated JSON logs.
 4. Do not treat missing fields as product truth.
+
+For larger retries, create isolated retry shards:
+
+```bash
+python scripts/plan_retry_shards.py --shards 4 --max-candidates 1200
+```
+
+Run the commands written to `data/amazon_3c/filtered_30_opportunities/retry_shards/commands.txt`, then merge and verify:
+
+```bash
+python scripts/merge_retry_shards.py --target 30
+python scripts/build_filtered_30_opportunity_excel.py
+python scripts/verify_crawl_outputs.py --target 30
+```
 
 ## Employee Workflow
 

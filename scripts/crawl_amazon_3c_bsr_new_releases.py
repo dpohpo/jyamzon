@@ -300,6 +300,25 @@ class Amazon3CBsrCrawler:
                     result["jsonld_currency"] = offers.get("priceCurrency", "")
         return result
 
+    def classify_missing_detail(self, html: str, status: str) -> str:
+        """Classify why a detail page did not yield a product title."""
+        if status and status != "ok":
+            return status
+        lower = (html or "").lower()
+        if "enter the characters" in lower and "captcha" in lower:
+            return "captcha"
+        if "robot check" in lower:
+            return "robot_check"
+        if "api-services-support@amazon.com" in lower or "automated access" in lower:
+            return "bot_block_message"
+        if "/ap/signin" in lower or "sign in to your account" in lower:
+            return "sign_in_page"
+        if "sorry" in lower and ("couldn't find that page" in lower or "looking for something" in lower):
+            return "not_found_or_unavailable"
+        if "currently unavailable" in lower and "product" not in lower:
+            return "unavailable_or_sparse_page"
+        return "missing_title_parse"
+
     def extract_product_detail(self, asin: str) -> dict[str, Any]:
         url = f"{BASE}/dp/{asin}"
         html, status = self.fetch(url)
@@ -328,7 +347,7 @@ class Amazon3CBsrCrawler:
         product["bullet_points"] = self.extract_bullets(soup)
         product["image_url"] = self.extract_image(soup, jsonld)
         product["bsr_text"] = self.extract_bsr_text(soup)
-        product["detail_error"] = "" if product.get("title") else "missing_title"
+        product["detail_error"] = "" if product.get("title") else self.classify_missing_detail(html, status)
         return product
 
     def extract_price(self, soup: BeautifulSoup, html: str, jsonld: dict[str, Any]) -> str:

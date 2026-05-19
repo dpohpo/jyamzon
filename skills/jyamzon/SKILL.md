@@ -34,25 +34,45 @@ python scripts/build_3c_bsr_excel.py
 Filtered opportunity crawl:
 
 ```bash
-python scripts/crawl_3c_filtered_opportunities_fast.py
-python scripts/retry_filtered_opportunity_details.py
-python scripts/build_filtered_30_opportunity_excel.py
+python scripts/run_filtered_30_pipeline.py --target 30 --retry-passes 2
 ```
 
 ## Workflow
 
 1. Start with `crawl_amazon_3c_bsr_new_releases.py` to map 50-100 visible 3C categories.
 2. Build the broad workbook with `build_3c_bsr_excel.py`.
-3. Run `crawl_3c_filtered_opportunities_fast.py` to collect non-duplicate candidates and apply hard filters.
-4. Run `retry_filtered_opportunity_details.py` if selected count is below 30 or many detail pages are missing fields.
-5. Build the final workbook with `build_filtered_30_opportunity_excel.py`.
+3. Run `run_filtered_30_pipeline.py` for the filtered 30-product output. It runs fast crawl, retry, Excel rebuild, and consistency verification.
+4. If the pipeline still misses target, use `plan_retry_shards.py`, `run_detail_retry_shard.py`, and `merge_retry_shards.py` to split slow retries across isolated workers, then rebuild and verify.
+5. Always run `verify_crawl_outputs.py --target 30` before reporting success.
 6. In the final response, report:
    - workbook path
    - candidate count
    - detail pages attempted
    - final selected count
+   - JSON/Excel consistency status
    - key data limitations
 7. If the user asks what crawler-only data can replace MCP/API calls, run `scripts/run_claude_crawler_audit.py --skip-reviews` when a Claude Amazon crawler is available, then summarize field coverage and gaps.
+
+## Reliability Mode
+
+Use reliability mode when Amazon pages are sparse, selected count is below target, or another agent reports inconsistent Excel/JSON counts:
+
+```bash
+python scripts/run_filtered_30_pipeline.py --target 30 --retry-passes 2
+python scripts/verify_crawl_outputs.py --target 30
+```
+
+If standard retry cannot reach target:
+
+```bash
+python scripts/plan_retry_shards.py --shards 4 --max-candidates 1200
+# run commands from data/amazon_3c/filtered_30_opportunities/retry_shards/commands.txt
+python scripts/merge_retry_shards.py --target 30
+python scripts/build_filtered_30_opportunity_excel.py
+python scripts/verify_crawl_outputs.py --target 30
+```
+
+Do not claim "30 opportunities" unless the final Excel contains 30 unique ASINs and matches `selected_30_curated.json`.
 
 ## Hard Filters
 
@@ -76,3 +96,5 @@ High-risk categories such as wireless, Bluetooth, Wi-Fi, power strips, chargers,
 ## Evidence Standard
 
 Be explicit that BSR/New Releases rank is not demand proof. It is only a discovery signal. Recommend paid-data validation only after the crawler creates a shortlist.
+
+When detail fields are missing, report `detail_error` categories such as `captcha`, `sign_in_page`, `not_found_or_unavailable`, or `missing_title_parse`. Do not collapse all missing titles into one cause without evidence.

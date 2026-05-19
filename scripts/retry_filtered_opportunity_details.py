@@ -7,6 +7,7 @@ import csv
 import importlib.util
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -14,6 +15,8 @@ from typing import Any
 BASE_SCRIPT = Path("scripts/crawl_amazon_3c_bsr_new_releases.py")
 FILTER_SCRIPT = Path("scripts/crawl_3c_filtered_opportunities.py")
 OUTPUT_DIR = Path("data/amazon_3c/filtered_30_opportunities")
+SUMMARY_PATH = OUTPUT_DIR / "summary.json"
+SUMMARY_WITH_RETRY_PATH = OUTPUT_DIR / "summary_with_retry.json"
 
 
 def load_module(path: Path, name: str):
@@ -79,7 +82,7 @@ def main() -> int:
     selected = load_json(OUTPUT_DIR / "selected_30.json", [])
     accepted_pool = load_json(OUTPUT_DIR / "accepted_pool.json", [])
     candidates = load_json(OUTPUT_DIR / "candidate_asins.json", [])
-    summary = load_json(OUTPUT_DIR / "summary.json", {})
+    summary = load_json(SUMMARY_PATH, {})
     previous_retry_attempted = int(summary.get("retry_attempted", 0) or 0)
 
     selected_by_asin = {row["asin"]: row for row in selected if row.get("asin")}
@@ -159,7 +162,10 @@ def main() -> int:
     write_csv(OUTPUT_DIR / "selected_30.csv", selected_rows, fields)
     summary["selected_after_retry"] = len(selected_rows)
     summary["retry_attempted"] = previous_retry_attempted + retried
-    write_json(OUTPUT_DIR / "summary.json", summary)
+    summary["retry_run_at"] = datetime.now(timezone.utc).isoformat()
+    summary["final_status"] = "target_met" if len(selected_rows) >= 30 else "target_not_met"
+    write_json(SUMMARY_PATH, summary)
+    write_json(SUMMARY_WITH_RETRY_PATH, summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
     return 0 if len(selected_rows) >= 30 else 2
 
