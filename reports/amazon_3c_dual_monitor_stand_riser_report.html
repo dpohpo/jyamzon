@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon 3C 选品报告 - 双显示器增高架</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5f6b7a;
+      --line: #d8dde5;
+      --paper: #fbfaf7;
+      --panel: #ffffff;
+      --navy: #20364f;
+      --teal: #167c80;
+      --green: #2e7d4f;
+      --amber: #a15c16;
+      --red: #a93635;
+      --blue: #3f67a6;
+      --shadow: 0 18px 45px rgba(24, 34, 48, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 15px/1.58 Inter, "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .hero {
+      color: #fff;
+      background:
+        linear-gradient(115deg, rgba(19, 31, 48, 0.96), rgba(26, 70, 85, 0.92)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 68px);
+      padding: 56px 32px 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .hero-inner, main {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #b8d8da;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      font-weight: 750;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 980px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      margin: 18px 0 0;
+      color: #d9e7e8;
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .metric {
+      min-height: 116px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+    }
+
+    .metric .label {
+      color: #b9ccd2;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .metric .value {
+      margin-top: 8px;
+      display: block;
+      font-size: 24px;
+      font-weight: 790;
+    }
+
+    .metric .note {
+      margin-top: 6px;
+      color: #d8e8ea;
+      font-size: 13px;
+    }
+
+    main {
+      padding: 30px 24px 64px;
+    }
+
+    section {
+      margin-top: 28px;
+      padding: 26px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    section.band {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 18px 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      line-height: 1.18;
+      letter-spacing: 0;
+      color: var(--navy);
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 17px;
+      color: var(--navy);
+    }
+
+    p { margin: 0 0 12px; }
+
+    .callout {
+      border-left: 4px solid var(--teal);
+      background: #edf7f6;
+      padding: 14px 16px;
+      border-radius: 6px;
+      color: #183a40;
+    }
+
+    .warning {
+      border-left-color: var(--amber);
+      background: #fff4e8;
+      color: #55300c;
+    }
+
+    .decision {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .verdict {
+      padding: 20px;
+      border-radius: 8px;
+      background: #f3f8f3;
+      border: 1px solid #c8ddcd;
+    }
+
+    .verdict strong {
+      display: block;
+      color: var(--green);
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .phase {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fcfcfb;
+    }
+
+    .phase b {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef2f6;
+      color: #26374b;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .tag.green { background: #e5f4eb; color: var(--green); }
+    .tag.amber { background: #fff0da; color: var(--amber); }
+    .tag.red { background: #fbe5e5; color: var(--red); }
+    .tag.blue { background: #eaf0fb; color: var(--blue); }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 150px 1fr 52px;
+      gap: 10px;
+      align-items: center;
+      margin: 11px 0;
+    }
+
+    .bar-bg {
+      height: 12px;
+      border-radius: 999px;
+      background: #e5e9ef;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--green));
+      border-radius: 999px;
+    }
+
+    .total-score {
+      display: grid;
+      place-items: center;
+      min-height: 230px;
+      border-radius: 8px;
+      background: #17202a;
+      color: #fff;
+      text-align: center;
+      padding: 22px;
+    }
+
+    .total-score .num {
+      font-size: 76px;
+      font-weight: 820;
+      line-height: 1;
+    }
+
+    .total-score .caption {
+      margin-top: 8px;
+      color: #c9d8db;
+      font-weight: 700;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .evidence {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fcfcfb;
+      padding: 16px;
+    }
+
+    .evidence .big {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .evidence .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fcfcfb;
+    }
+
+    .step .when {
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li { margin: 5px 0; }
+
+    .footnotes {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .hero { padding: 38px 20px 34px; }
+      main { padding: 18px 14px 48px; }
+      section { padding: 18px; }
+      .hero-grid, .decision, .phase-grid, .score-grid, .evidence-grid { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 116px 1fr 42px; }
+      .step { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Amazon 美国站 3C 选品研究 - 2026 年 5 月 18 日</p>
+      <h1>被动式双显示器增高架：选品计划与证据报告</h1>
+      <p class="subtitle">这是一套完整的 3C 筛选流程：先从宽泛市场出发，再收敛到低认证负担的细分领域，最后形成有条件的产品概念、评分卡、风险判断和验证计划。</p>
+
+      <div class="hero-grid" aria-label="关键选品参数">
+        <div class="metric">
+          <span class="label">选定领域</span>
+          <span class="value">桌面显示器增高架</span>
+          <div class="note">被动式居家办公 3C 配件</div>
+        </div>
+        <div class="metric">
+          <span class="label">目标价格</span>
+          <span class="value">$29.99-$34.99</span>
+          <div class="note">可接受零售价区间：$24-$39</div>
+        </div>
+        <div class="metric">
+          <span class="label">决策</span>
+          <span class="value">观察+</span>
+          <div class="note">大货前必须先做样品验证</div>
+        </div>
+        <div class="metric">
+          <span class="label">评分</span>
+          <span class="value">69 / 100</span>
+          <div class="note">还不是干净的 GO 决策</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>底层目标与前提校验</h2>
+      <div class="decision">
+        <div>
+          <p>真正目标不是找到一个搜索量很高的产品，而是找到一个能在 Amazon 美国站的经济模型、合规要求、评价体系和广告成本下存活的产品，从而值得进入打样和 Listing 搭建阶段。</p>
+          <p>宽泛 3C 选品中最危险的错误前提，是以为需求数据本身就足够。在 3C 里，电池、充电器、无线模块、发热、App 支持、固件、兼容性声明和知识产权风险，都可能抹掉一个看似漂亮的需求信号。</p>
+          <p>所以我优先选择被动式配件领域：显示器增高架和桌面收纳架。相比充电器、拓展坞、摄像头、无线外设和充电宝，这类产品的认证负担明显更低。</p>
+        </div>
+        <div class="verdict">
+          <strong>推荐产品概念</strong>
+          <p><b>带收纳和理线功能的双显示器增高架</b>，核心定位围绕装配可靠性、全尺寸键盘收纳空间、颜色准确性、更强包装，以及桌面整理价值。</p>
+          <p>不要复制带专利结构或声明“USPTO patented product”的竞品。开模前必须先验证专利空间。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>完整任务计划 - 9 阶段工作流</h2>
+      <p>这是本次研究使用的计划，也可以作为后续 3C 选品项目的复用流程。</p>
+      <div class="phase-grid">
+        <div class="phase"><b>阶段 1 - 范围、约束与拒绝规则</b>设定站点、价格带、资金承受度、私标可行性、认证风险偏好，并为电池、射频、充电器、医疗、儿童相关和专利密集产品设置自动拒绝规则。</div>
+        <div class="phase"><b>阶段 2 - 种子类目地图</b>把 3C 拆成 MECE 集群：被动配件、充电器/线材、支架/安装件、音频、游戏、存储、摄影/视频、办公人体工学和替换零件。</div>
+        <div class="phase"><b>阶段 3 - 关键词机会筛选</b>用卖家精灵关键词研究对比搜索量、购买量、购买率、商品数、供需比、PPC 竞价、点击集中度、标题密度和品牌词风险。</div>
+        <div class="phase"><b>阶段 4 - 趋势与季节性</b>在可用时结合 Google Trends 和 Amazon 关键词趋势数据。强趋势判断需要 36 个以上数据点；稀疏精确词只标记为中等置信度。</div>
+        <div class="phase"><b>阶段 5 - 产品与类目验证</b>使用精确短语样本和类目节点研究。如果宽泛节点混入多个子类目，例如显示器增高架和站立办公桌转换器，就不要过度依赖宽泛节点。</div>
+        <div class="phase"><b>阶段 6 - 竞争壁垒</b>衡量评价壁垒、品牌重复度、卖家集中度、Amazon 自营压力、Listing 质量、变体策略，以及新进入者是否仍能排名。</div>
+        <div class="phase"><b>阶段 7 - 利润、物流与现金流</b>检查零售价、FBA 费用、包装尺寸、发货重量、仓储压力、退货处理、缺陷换新，以及 PPC 是否能被毛利承接。</div>
+        <div class="phase"><b>阶段 8 - 合规、知识产权与运营风险</b>分类电池、无线、电气、儿童、危险品、材料、结构、专利和平台执法风险，并记录下单前必须验证的事项。</div>
+        <div class="phase"><b>阶段 9 - 差异化、流量与决策</b>挖掘差评、反查 ASIN 流量、相关关键词和组合销售角度。把发现转化为 GO/观察/拒绝决策，并列出证伪条件和下一步动作。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>为什么选择这个领域</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>候选关键词</th>
+              <th>月搜索量</th>
+              <th>购买量</th>
+              <th>购买率</th>
+              <th>均价</th>
+              <th>商品数</th>
+              <th>近 3 月趋势</th>
+              <th>筛选结果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>双显示器增高架（dual monitor stand riser）</td>
+              <td>22,495</td>
+              <td>2,321</td>
+              <td>10.32%</td>
+              <td>$27.98</td>
+              <td>1,378</td>
+              <td>-2.13%</td>
+              <td><span class="tag green">最佳匹配</span></td>
+            </tr>
+            <tr>
+              <td>显示器增高架（monitor riser）</td>
+              <td>119,015</td>
+              <td>3,141</td>
+              <td>2.65%</td>
+              <td>来自流量拓展</td>
+              <td>2,978</td>
+              <td>未拉取</td>
+              <td><span class="tag green">流量池</span></td>
+            </tr>
+            <tr>
+              <td>平板枕式支架（tablet pillow stand）</td>
+              <td>15,554</td>
+              <td>425</td>
+              <td>2.73%</td>
+              <td>$39.89</td>
+              <td>762</td>
+              <td>-26.86%</td>
+              <td><span class="tag amber">需求下滑</span></td>
+            </tr>
+            <tr>
+              <td>理线盒（cable organizer box）</td>
+              <td>15,985</td>
+              <td>486</td>
+              <td>3.04%</td>
+              <td>$19.99</td>
+              <td>8,131</td>
+              <td>-35.22%</td>
+              <td><span class="tag amber">价格可行，趋势偏弱</span></td>
+            </tr>
+            <tr>
+              <td>摄像头补光灯（webcam light）</td>
+              <td>13,337</td>
+              <td>740</td>
+              <td>5.55%</td>
+              <td>$49.99</td>
+              <td>6,696</td>
+              <td>-8.27%</td>
+              <td><span class="tag red">主动电子产品</span></td>
+            </tr>
+            <tr>
+              <td>双耳机架（dual headphone stand）</td>
+              <td>1,231</td>
+              <td>159</td>
+              <td>12.91%</td>
+              <td>$19.99</td>
+              <td>1,609</td>
+              <td>-24.17%</td>
+              <td><span class="tag amber">需求规模偏小</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnotes">来源：卖家精灵 MCP keyword_research 和 traffic_extend，美国站，月份 202604。数值为卖家精灵估算，应按方向性证据使用。</p>
+    </section>
+
+    <section>
+      <h2>关键词与流量证据</h2>
+      <div class="evidence-grid">
+        <div class="evidence">
+          <div class="big">10.32%</div>
+          <div class="small">“dual monitor stand riser”的购买率</div>
+        </div>
+        <div class="evidence">
+          <div class="big">16.32</div>
+          <div class="small">精确目标关键词的供需比</div>
+        </div>
+        <div class="evidence">
+          <div class="big">$1.12</div>
+          <div class="small">精确目标关键词的预估 PPC 竞价</div>
+        </div>
+      </div>
+      <h3>来自竞品 ASIN 拓展的流量入口词</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>关键词</th>
+              <th>搜索量</th>
+              <th>购买量</th>
+              <th>购买率</th>
+              <th>竞价</th>
+              <th>商品数</th>
+              <th>点击集中度</th>
+              <th>入口用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>显示器支架（monitor stand）</td><td>203,859</td><td>5,137</td><td>2.52%</td><td>$0.86</td><td>25,232</td><td>19.06%</td><td>认知流量和宽泛 SEO</td></tr>
+            <tr><td>双显示器支架（dual monitor stand）</td><td>123,470</td><td>3,605</td><td>2.92%</td><td>$2.82</td><td>5,902</td><td>36.21%</td><td>CPC 较高，启动需谨慎</td></tr>
+            <tr><td>显示器增高架（monitor riser）</td><td>119,015</td><td>3,141</td><td>2.65%</td><td>$0.83</td><td>2,978</td><td>19.79%</td><td>核心 Listing 词</td></tr>
+            <tr><td>双显示器增高架（dual monitor stand riser）</td><td>22,495</td><td>2,321</td><td>10.32%</td><td>$1.12</td><td>1,378</td><td>23.12%</td><td>主转化词</td></tr>
+            <tr><td>桌面显示器增高架（monitor riser for desk）</td><td>42,054</td><td>1,286</td><td>3.06%</td><td>$0.73</td><td>2,793</td><td>19.08%</td><td>长尾广告活动</td></tr>
+            <tr><td>桌面显示器增高架（desk monitor riser）</td><td>9,600</td><td>798</td><td>8.32%</td><td>$0.81</td><td>2,747</td><td>23.64%</td><td>转化型长尾词</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>趋势与季节性</h2>
+      <p>精确词“dual monitor stand riser”只有 13 个稀疏的 Google Trends 数据点，因此不足以形成高置信趋势判断。更宽泛的代理词“monitor stand riser”从 2021 年 5 月到 2026 年 5 月共有 61 个数据点，方向性参考价值更高。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>趋势代理词</th>
+              <th>数据点</th>
+              <th>最近 12 期均值</th>
+              <th>前 12 期均值</th>
+              <th>变化</th>
+              <th>尖峰风险</th>
+              <th>解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>显示器增高架（monitor stand riser）</td><td>61</td><td>24.92</td><td>16.92</td><td>+47.3%</td><td>最大值为中位数 5.0 倍</td><td><span class="tag amber">上升，但有尖峰风险</span></td></tr>
+            <tr><td>便携显示器支架（portable monitor stand）</td><td>58</td><td>12.00</td><td>4.25</td><td>+182.4%</td><td>最大值为中位数 23.0 倍</td><td><span class="tag amber">上升，但可能被事件/尖峰扭曲</span></td></tr>
+            <tr><td>双显示器增高架（dual monitor stand riser）</td><td>13</td><td>13.83</td><td>不足</td><td>不适用</td><td>最大值为中位数 3.82 倍</td><td><span class="tag blue">仅中等置信度</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnotes">来源：卖家精灵 MCP google_trend，美国站，monthly=true，拉取时间 2026 年 5 月 18 日。Google Trends 数值是归一化兴趣度，不是绝对搜索量。</p>
+    </section>
+
+    <section>
+      <h2>产品样本与竞争壁垒</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ASIN</th>
+              <th>品牌</th>
+              <th>价格</th>
+              <th>评分数</th>
+              <th>评分</th>
+              <th>包装重量</th>
+              <th>FBA 费用</th>
+              <th>信号</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>B0855QBHTZ</td><td>AMERIERGO</td><td>$24.34-$28.99</td><td>10,249</td><td>4.5</td><td>8.16 lb</td><td>$8.72</td><td>精确短语头部竞品，壁垒较强</td></tr>
+            <tr><td>B082N9PL4B</td><td>FITUEYES</td><td>$29.99</td><td>8,322</td><td>4.6</td><td>7.89 lb</td><td>$8.64</td><td>成熟木质三层设计</td></tr>
+            <tr><td>B0C4SZ286V</td><td>BONTEC</td><td>$24.69</td><td>7,495</td><td>4.6</td><td>6.57 lb</td><td>$8.46</td><td>品牌强，重量较低</td></tr>
+            <tr><td>B09712RBWB</td><td>WESTREE</td><td>$39.99</td><td>4,021</td><td>4.7</td><td>9.88 lb</td><td>$9.53</td><td>抽屉款式，价格更高</td></tr>
+            <tr><td>B0DJKSMV2T</td><td>gianotter</td><td>$27.98-$29.99</td><td>2,677</td><td>4.6</td><td>6.64 lb</td><td>$8.46</td><td>较新进入者，办公架子子类目排名第 1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warning">
+        仅靠宽泛节点数据不够干净。Monitor Stands 节点包含高价站立办公桌转换器和医疗/工业推车，会扭曲均价和集中度。对本次决策来说，精确短语产品样本更可靠。
+      </div>
+    </section>
+
+    <section>
+      <h2>评论差异化机会</h2>
+      <p>差评暴露了可重复的问题，这些问题可以转化为采购规格和 Listing 卖点。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>投诉主题</th>
+              <th>证据模式</th>
+              <th>差异化要求</th>
+              <th>验证测试</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>零件和五金缺失</td><td>多个 1 星评论提到缺少螺丝、木榫、面板或工具。</td><td>预包装五金吸塑卡、备用五金、二维码组装视频、零件清单照片。</td><td>入仓前随机开 20 箱，逐件验证零件数量。</td></tr>
+            <tr><td>组装挫败感</td><td>评论提到说明不清、架子不平、部件无法贴合、螺丝断裂。</td><td>免安装或低安装复杂度设计，优先使用防丢固定件和纸质说明书。</td><td>无经验用户 5 分钟内完成组装，20 次测试中无螺丝滑牙。</td></tr>
+            <tr><td>MDF 薄弱、划痕、掉漆</td><td>评论提到木板破裂、贴纸翘起、划痕、掉漆和表面处理差。</td><td>粉末喷涂钢材或封闭处理竹材方案，边角保护，抗磨包装。</td><td>跌落测试、摩擦测试、湿度暴露测试和到货损伤检查。</td></tr>
+            <tr><td>尺寸与使用场景不匹配</td><td>键盘太宽放不进去，理线槽太窄，产品对桌面来说过长。</td><td>全尺寸键盘净空、更宽理线槽、更清晰的尺寸示意图。</td><td>用 17 英寸键盘、27 英寸双显示器和常见线头做适配测试。</td></tr>
+            <tr><td>颜色不符和异味</td><td>评论提到颜色与图片不符、褪色、强烈气味。</td><td>颜色校准 Listing 图片，供应商异味限制，避免低等级 MDF 表面处理。</td><td>确认色样，并在开箱后做 72 小时异味检查。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>合规、知识产权与物流风险</h2>
+      <div class="evidence-grid">
+        <div class="evidence">
+          <div class="big">绿色</div>
+          <div class="small">如果产品保持无电子元件的被动式形态，电池、无线、FCC、充电器和危险品风险较低。</div>
+        </div>
+        <div class="evidence">
+          <div class="big">黄色</div>
+          <div class="small">结构承重、材料表面、锐边、异味、包装损伤和退货率需要重点验证。</div>
+        </div>
+        <div class="evidence">
+          <div class="big">黄色</div>
+          <div class="small">至少一个竞品 Listing 声称 USPTO 专利产品，因此存在专利/外观设计风险。</div>
+        </div>
+      </div>
+      <h3>为什么被动式产品重要</h3>
+      <p>FCC data.gov 说明，射频设备在美国销售或进口前，必须按 47 CFR Part 2 完成适当授权。如果显示器支架不含任何电子元件，就可以避开整条射频授权路径。</p>
+      <p>Amazon 表示，平台销售的商品必须符合适用法律、法规和 Amazon 政策，提交的安全文件也可能被审核。这支持我们优先选择认证负担更低的被动式配件。</p>
+      <p>Amazon FBA 成本对尺寸和重量敏感。Amazon 说明，大号标准尺寸上限为 18 x 14 x 8 英寸、20 lb；超过这些尺寸会进入大件/笨重大件区间。目标包装应控制在 18 x 12 x 3.5 英寸以内，理想重量低于 6.5 lb，以降低利润压力。</p>
+    </section>
+
+    <section>
+      <h2>评分卡</h2>
+      <div class="score-grid">
+        <div>
+          <div class="bar-row"><span>需求</span><div class="bar-bg"><div class="bar" style="width:85%"></div></div><b>17/20</b></div>
+          <div class="bar-row"><span>趋势</span><div class="bar-bg"><div class="bar" style="width:67%"></div></div><b>10/15</b></div>
+          <div class="bar-row"><span>竞争</span><div class="bar-bg"><div class="bar" style="width:60%"></div></div><b>12/20</b></div>
+          <div class="bar-row"><span>利润/物流</span><div class="bar-bg"><div class="bar" style="width:53%"></div></div><b>8/15</b></div>
+          <div class="bar-row"><span>风险</span><div class="bar-bg"><div class="bar" style="width:67%"></div></div><b>10/15</b></div>
+          <div class="bar-row"><span>差异化</span><div class="bar-bg"><div class="bar" style="width:80%"></div></div><b>12/15</b></div>
+        </div>
+        <div class="total-score">
+          <div>
+            <div class="num">69</div>
+            <div class="caption">观察+ / 样品验证</div>
+          </div>
+        </div>
+      </div>
+      <p class="callout">决策：暂时不要下大货订单。这个细分市场足够支撑供应商 RFQ 和样品阶段，但评价壁垒、重包装和专利/设计风险使其还不能成为干净的 GO 决策。</p>
+    </section>
+
+    <section>
+      <h2>推荐产品规格</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>规格项</th>
+              <th>目标</th>
+              <th>原因</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>零售价</td><td>$29.99-$34.99</td><td>贴近已验证的精确关键词价格，同时为更好包装和材料留下空间。</td></tr>
+            <tr><td>包装</td><td>低于 18 x 12 x 3.5 英寸，低于 6.5 lb</td><td>对标 6.6-10.6 lb 的竞品，同时降低 FBA 和仓储压力。</td></tr>
+            <tr><td>材料</td><td>粉末喷涂钢材或封闭处理竹材；避免低等级 MDF</td><td>直接回应划痕、掉漆、异味和表面处理差的投诉。</td></tr>
+            <tr><td>组装</td><td>免安装或 5 分钟内完成；优先使用防丢固定件</td><td>组装失败是最明确的差评缺口之一。</td></tr>
+            <tr><td>适配</td><td>全尺寸键盘净空和更宽理线槽</td><td>竞品评论暴露了尺寸不匹配和理线槽受限的问题。</td></tr>
+            <tr><td>Listing</td><td>尺寸示意图、理线槽特写、承重测试证明、颜色校准图片</td><td>降低因预期不匹配造成的退货。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>未来 30 天执行计划</h2>
+      <div class="timeline">
+        <div class="step"><div class="when">第 1-3 天</div><div>执行专利/外观设计检索，收集 20 个竞品图片参考，定义不可复制的设计简报，并锁定禁止使用的声明。</div></div>
+        <div class="step"><div class="when">第 4-7 天</div><div>向 10 家供应商发送 RFQ，覆盖金属、竹材和混合材质版本。要求提供包装尺寸、外箱跌落测试数据、承重能力、异味/材料说明和单件到岸报价。</div></div>
+        <div class="step"><div class="when">第 8-14 天</div><div>订购 3-5 个样品。执行组装、承重、晃动、划痕、异味、键盘净空、理线槽和包装损伤测试。</div></div>
+        <div class="step"><div class="when">第 15-20 天</div><div>用真实到岸成本、FBA 费用估算、佣金、$0.75-$1.12 CPC 的 PPC、退货准备金和 10% coupon 敏感性建立利润模型。</div></div>
+        <div class="step"><div class="when">第 21-25 天</div><div>创建 Listing 概念：主图、尺寸示意图、问题-解决方案对比、回应评价异议的五点描述和关键词地图。</div></div>
+        <div class="step"><div class="when">第 26-30 天</div><div>做最终决策：只有当到岸 COGS、包装尺寸、专利检索和样品 QA 都满足下方证伪条件时，才进入 GO。</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>证伪条件与最薄弱环节</h2>
+      <h3>证伪条件</h3>
+      <ul>
+        <li>样品包装在不牺牲质量的情况下，无法控制在 18 x 12 x 3.5 英寸以内或 6.5 lb 以下。</li>
+        <li>到岸成本加 Amazon 费用后，无法在 PPC 和退货准备金之后支撑至少 25% 的贡献利润率。</li>
+        <li>专利/外观设计检索显示，最佳差异化路径与有效权利要求冲突。</li>
+        <li>样品测试复现竞品失败：五金缺失、结构晃动、划痕损伤、异味或组装说明不清。</li>
+        <li>Seller Central 类目/Listing 检查触发意外的合规文件或限制要求。</li>
+      </ul>
+      <h3>最薄弱环节</h3>
+      <p>最薄弱环节是真实到岸成本和体积重下的单件经济模型。卖家精灵竞品行显示 FBA 费用约为 $8.06-$9.55，而这个精确产品类型对 $29.99 商品来说偏笨重。如果供应商无法在提升质量的同时降低包装重量/体积，这个细分市场应保持观察，而不是进入 GO。</p>
+    </section>
+
+    <section class="band footnotes">
+      <h2>来源与限制</h2>
+      <p><b>卖家精灵 MCP 数据：</b>keyword_research、product_research、product_node、market_research_statistics、market_product_concentration、google_trend、traffic_extend、asin_detail_with_coupon_trend 和 review。站点：美国。适用基准月份：202604。拉取时间：2026 年 5 月 18 日。</p>
+      <p><b>官方参考：</b><a href="https://catalog.data.gov/dataset/eas-equipment-authorization-grantee-registrations">FCC 设备授权系统数据集</a>；<a href="https://www.aboutamazon.com/news/company-news/product-safety-and-compliance-in-our-store">Amazon 产品安全与合规声明</a>；<a href="https://sell.amazon.com/fulfillment-by-amazon">Amazon FBA 费用与尺寸分层指引</a>；<a href="https://www.cpsc.gov/Newsroom/News-Releases/2023/CPSC-Adopts-Final-Consumer-Product-Safety-Standard-to-Prevent-Tip-overs-of-Dressers-and-Other-Clothing-Storage-Units">CPSC 家具倾倒规则背景</a>。</p>
+      <p><b>限制：</b>卖家精灵估算值是方向性证据；product_research 中若干行的销量和销售额字段返回为空；traffic_keyword 明细返回较稀疏，因此使用 traffic_extend 做关键词扩展。本报告是选品筛选，不构成法律、税务或合规建议。</p>
+    </section>
+  </main>
+</body>
+</html>

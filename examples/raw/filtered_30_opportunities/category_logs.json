@@ -1,0 +1,1322 @@
+[
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc",
+    "path": "Computers & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless",
+    "path": "Cell Phones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/281407/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2811119011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Cell Phones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/541966/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Computers & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172541/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Headphones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172574/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Office Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172623/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Portable Audio & Video",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926841011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Video Game Consoles & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642125011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > eBook Readers & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/172456/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Computer Accessories & Peripherals",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/193870011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Computer Components",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/1292110011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Data Storage",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/565098/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Desktops",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3012292011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > External Components",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3011391011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Laptop Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/565108/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Laptops",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/1292115011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Monitors",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/172504/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Networking Products",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/172635/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Printers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/300189/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Routers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/172584/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Scanners",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/11036071/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Servers",
+    "status": "ok",
+    "asins": 13
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/2348628011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Tablet Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/1232597011/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Tablets",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/16285851/ref=zg_bsnr_nav_pc_1",
+    "path": "Computers & Accessories > Warranties & Services",
+    "status": "ok",
+    "asins": 9
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407755011/ref=zg_bsnr_nav_wireless_1",
+    "path": "Cell Phones & Accessories > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407760011/ref=zg_bsnr_nav_wireless_1",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/7072561011/ref=zg_bsnr_nav_wireless_1",
+    "path": "Cell Phones & Accessories > Cell Phones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/3345523011/ref=zg_bsnr_nav_wireless_1",
+    "path": "Cell Phones & Accessories > SIM Cards & Prepaid Minutes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/photo/172435/ref=zg_bsnr_nav_photo_1",
+    "path": "Camera & Photo > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/photo/172437/ref=zg_bsnr_nav_photo_1",
+    "path": "Camera & Photo > Bags & Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/photo/499320/ref=zg_bsnr_nav_photo_1",
+    "path": "Camera & Photo > Binoculars & Scopes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/photo/499248/ref=zg_bsnr_nav_photo_1",
+    "path": "Camera & Photo > Lenses",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/photo/898400/ref=zg_bsnr_nav_photo_1",
+    "path": "Camera & Photo > Surveillance Cameras",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_281407_1",
+    "path": "Electronics > Accessories & Supplies > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172435/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2407755011/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/290458/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Cable Organizer Bags & Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/12954861/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Cables",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/11042051/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Cord Management",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/559942/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > GPS System Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2632817011/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Installation Services",
+    "status": "ok",
+    "asins": 1
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/11974521/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Microphones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/10966911/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Mounts",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172575/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Office Electronics Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/17854127011/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Power Strips & Surge Protectors",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172607/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Telephone Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/10981291/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Vehicle Electronics Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172435/ref=zg_bsnr_nav_electronics_2_502394",
+    "path": "Electronics > Camera & Photo > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172437/ref=zg_bsnr_nav_electronics_2_502394",
+    "path": "Electronics > Camera & Photo > Bags & Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/499320/ref=zg_bsnr_nav_electronics_2_502394",
+    "path": "Electronics > Camera & Photo > Binoculars & Scopes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2223901011/ref=zg_bsnr_nav_electronics_2_281407",
+    "path": "Electronics > Accessories & Supplies > Power Protection",
+    "status": "ok",
+    "asins": 1
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_2811119011_1",
+    "path": "Electronics > Cell Phones & Accessories > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2407755011/ref=zg_bsnr_nav_electronics_2_2811119011",
+    "path": "Electronics > Cell Phones & Accessories > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2407760011/ref=zg_bsnr_nav_electronics_2_2811119011",
+    "path": "Electronics > Cell Phones & Accessories > Cases, Holsters & Clips",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7072561011/ref=zg_bsnr_nav_electronics_2_2811119011",
+    "path": "Electronics > Cell Phones & Accessories > Cell Phones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3345523011/ref=zg_bsnr_nav_electronics_2_2811119011",
+    "path": "Electronics > Cell Phones & Accessories > SIM Cards & Prepaid Minutes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_541966_1",
+    "path": "Electronics > Computers & Accessories > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172456/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/193870011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Computer Components",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/13896617011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Computers & Tablets",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/1292110011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Data Storage",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3011391011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Laptop Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/1292115011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Monitors",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172504/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Networking Products",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/11036071/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Servers",
+    "status": "ok",
+    "asins": 13
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2348628011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Tablet Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/15524379011/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Tablet Replacement Parts",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/16285851/ref=zg_bsnr_nav_electronics_2_541966",
+    "path": "Electronics > Computers & Accessories > Warranties & Services",
+    "status": "ok",
+    "asins": 9
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_172541_1",
+    "path": "Electronics > Headphones > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/12097478011/ref=zg_bsnr_nav_electronics_2_172541",
+    "path": "Electronics > Headphones > Earbud Headphones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/12097480011/ref=zg_bsnr_nav_electronics_2_172541",
+    "path": "Electronics > Headphones > On-Ear Headphones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/99530371011/ref=zg_bsnr_nav_electronics_2_172541",
+    "path": "Electronics > Headphones > Open-Ear Headphones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/12097479011/ref=zg_bsnr_nav_electronics_2_172541",
+    "path": "Electronics > Headphones > Over-Ear Headphones",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_172623_1",
+    "path": "Electronics > Portable Audio & Video > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172633/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Boomboxes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172654/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > CB & Two-Way Radios",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172628/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Cassette Players & Recorders",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/227758/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Digital Voice Recorders",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/290438/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > MP3 & MP4 Player Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/1264866011/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > MP3 & MP4 Players",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172632/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Microcassette Recorders",
+    "status": "ok",
+    "asins": 12
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172631/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Minidisc Players",
+    "status": "ok",
+    "asins": 1
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/465608/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Portable CD Players",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172521/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Portable DVD Players",
+    "status": "ok",
+    "asins": 16
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/689637011/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Portable Speakers & Docks",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172681/ref=zg_bsnr_nav_electronics_2_172623",
+    "path": "Electronics > Portable Audio & Video > Radios",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_7926841011_1",
+    "path": "Electronics > Video Game Consoles & Accessories > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/8946437011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Fire TV",
+    "status": "ok",
+    "asins": 1
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926850011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Nintendo 3DS",
+    "status": "ok",
+    "asins": 18
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926849011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Nintendo DS",
+    "status": "ok",
+    "asins": 24
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/16227139011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Nintendo Switch",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926843011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > PlayStation 3",
+    "status": "ok",
+    "asins": 8
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926842011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > PlayStation 4",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926852011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > PlayStation Vita",
+    "status": "ok",
+    "asins": 11
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926851011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Sony PSP",
+    "status": "ok",
+    "asins": 7
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926847011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Wii",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926848011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Wii U",
+    "status": "ok",
+    "asins": 13
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926846011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Xbox 360",
+    "status": "ok",
+    "asins": 19
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7926844011/ref=zg_bsnr_nav_electronics_2_7926841011",
+    "path": "Electronics > Video Game Consoles & Accessories > Xbox One",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_2642125011_1",
+    "path": "Electronics > eBook Readers & Accessories > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642130011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Bundles",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642131011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Covers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642132011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Power Adapters",
+    "status": "ok",
+    "asins": 8
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642133011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Power Cables",
+    "status": "ok",
+    "asins": 5
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642134011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Reading Lights",
+    "status": "ok",
+    "asins": 11
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642135011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Screen Protectors",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642136011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Skins",
+    "status": "ok",
+    "asins": 2
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642137011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Sleeves",
+    "status": "ok",
+    "asins": 28
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642138011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > Stands",
+    "status": "ok",
+    "asins": 11
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/2642129011/ref=zg_bsnr_nav_electronics_2_2642125011",
+    "path": "Electronics > eBook Readers & Accessories > eBook Readers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/ref=zg_bsnr_unv_pc_1_3012292011_2",
+    "path": "Computers & Accessories > External Components > Computers & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/193870011/ref=zg_bsnr_unv_pc_2_3012292011_1",
+    "path": "Computers & Accessories > External Components > Computer Components",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/572238/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > Computer Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/595048/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > External Hard Drives",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3015429011/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > External Solid State Drives",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3015427011/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > External Sound Cards",
+    "status": "ok",
+    "asins": 1
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3015428011/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > External TV Tuners",
+    "status": "ok",
+    "asins": 9
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/13983771/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > KVM Switches",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/1292112011/ref=zg_bsnr_nav_pc_3_3012292011",
+    "path": "Computers & Accessories > External Components > Optical Drives",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/ref=zg_bsnr_unv_pc_1_300189_3",
+    "path": "Computers & Accessories > Routers > Computers & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/172504/ref=zg_bsnr_unv_pc_2_300189_2",
+    "path": "Computers & Accessories > Routers > Networking Products",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/13983751/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Device Servers",
+    "status": "ok",
+    "asins": 4
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/281413/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Hubs",
+    "status": "ok",
+    "asins": 3
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/5005583011/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Mobile Broadband Devices",
+    "status": "ok",
+    "asins": 13
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/17442743011/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Modem Router Combos",
+    "status": "ok",
+    "asins": 5
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/284715/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Modems",
+    "status": "ok",
+    "asins": 25
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/490499011/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Network Adapters",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3015438011/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Network Antennas",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/13436301/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Network Attached Storage",
+    "status": "ok",
+    "asins": 23
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/537316/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Network Transceivers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/13983761/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Print Servers",
+    "status": "ok",
+    "asins": 9
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/3015439011/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Repeaters",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/281414/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Switches",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/17935294011/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Whole Home & Mesh Wi-Fi Systems",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/pc/1194486/ref=zg_bsnr_nav_pc_2_300189",
+    "path": "Computers & Accessories > Routers > Wireless Access Points",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/ref=zg_bsnr_unv_wireless_1_2407755011_1",
+    "path": "Cell Phones & Accessories > Accessories > Cell Phones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209106011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Adhesive Card Holders",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407759011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Automobile Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209107011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Cables & Adapters",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21103668011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Camera Privacy Covers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407761011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Chargers & Power Adapters",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209101011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Décor",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209102011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Gaming Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209098011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Grips",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/24046923011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Headphones, Earbuds & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/18022313011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Item Finders",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209103011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Lanyards & Wrist Straps",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209105011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Maintenance, Upkeep & Repairs",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/3015433011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Micro SD Cards",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/23690035011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Mounts",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209100011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Photo & Video Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/689637011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Portable Speakers & Docks",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209099011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Screen Expanders & Magnifiers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407782011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Signal Boosters",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/18021376011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Single Ear Bluetooth Headsets",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/7939902011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Smartwatch Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/23690036011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Stands",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/11548954011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Stylus Pens",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21268231011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > UV Phone Sterilizer Boxes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/14775002011/ref=zg_bsnr_nav_wireless_2_2407755011",
+    "path": "Cell Phones & Accessories > Accessories > Virtual Reality (VR) Headsets",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/ref=zg_bsnr_unv_wireless_1_2407760011_1",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Cell Phones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/7073962011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Armbands",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/3081461011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Basic Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/7073958011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Battery Charger Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/17875442011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Bumpers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209096011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Case & Cover Bundles",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/21209095011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Crossbody & Lanyard Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/17875443011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Dry Bags",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/9931389011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Flip Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407765011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Holsters",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/9414313011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Sleeves",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/215543181011/ref=zg_bsnr_nav_wireless_2_2407760011",
+    "path": "Cell Phones & Accessories > Cases, Holsters & Clips > Waterproof Phone Cases",
+    "status": "ok",
+    "asins": 16
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/ref=zg_bsnr_unv_wireless_1_7072561011_2",
+    "path": "Cell Phones & Accessories > Cell Phones > Cell Phones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407755011/ref=zg_bsnr_nav_wireless_1_7072561011",
+    "path": "Cell Phones & Accessories > Cell Phones > Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2407760011/ref=zg_bsnr_nav_wireless_1_7072561011",
+    "path": "Cell Phones & Accessories > Cell Phones > Cases, Holsters & Clips",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/3345523011/ref=zg_bsnr_nav_wireless_1_7072561011",
+    "path": "Cell Phones & Accessories > Cell Phones > SIM Cards & Prepaid Minutes",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/ref=zg_bsnr_unv_wireless_1_3345523011_1",
+    "path": "Cell Phones & Accessories > SIM Cards & Prepaid Minutes > Cell Phones & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/2483609011/ref=zg_bsnr_nav_wireless_2_3345523011",
+    "path": "Cell Phones & Accessories > SIM Cards & Prepaid Minutes > Cell Phone Minutes",
+    "status": "ok",
+    "asins": 4
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/wireless/14674870011/ref=zg_bsnr_nav_wireless_2_3345523011",
+    "path": "Cell Phones & Accessories > SIM Cards & Prepaid Minutes > SIM Cards",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/502394/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Camera & Photo",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/1077068/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Car Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172526/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > GPS & Navigation",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/667846011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Home Audio & Theater",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/319574011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Marine Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/524136/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Security & Surveillance",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/16285901/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Service & Replacement Plans",
+    "status": "ok",
+    "asins": 9
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/1266092011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Televisions & Video",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/300334/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Video Projectors",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/10048700011/ref=zg_bsnr_nav_electronics_1",
+    "path": "Electronics > Accessories & Supplies > Electronics > Wearable Technology",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_172435_2",
+    "path": "Electronics > Accessories & Supplies > Accessories > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/502394/ref=zg_bsnr_unv_electronics_2_172435_1",
+    "path": "Electronics > Accessories & Supplies > Accessories > Camera & Photo",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7242007011/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Accessory Bundles",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/75364150011/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Action Camera Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172437/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Bags & Cases",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/13535371/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Batteries & Chargers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3345801/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Binocular Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172840/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Blank Video Media",
+    "status": "ok",
+    "asins": 5
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/14015081/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Cables & Cords",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/505106/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Camcorder Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/172426/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Cleaning Equipment",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3348501/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Darkroom Supplies",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/505110/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Digital Camera Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3109899011/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Digital Picture Frame Screen Protector Foils",
+    "status": "ok",
+    "asins": 3
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/499262/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Filters & Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3346401/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Flash Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/525898/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Lens Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7161086011/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Lighting & Studio",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/516866/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Memory Cards",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/196569011/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Professional Video Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3346261/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Rain Covers",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/14015071/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Remote Controls",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/525464/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Slide Projectors",
+    "status": "ok",
+    "asins": 3
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/7161068011/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Telescope & Microscope Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/3347771/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Tripod & Monopod Accessories",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/499306/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Tripods & Monopods",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/14015021/ref=zg_bsnr_nav_electronics_3_172435",
+    "path": "Electronics > Accessories & Supplies > Accessories > Viewfinders",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/ref=zg_bsnr_unv_electronics_1_290458_3",
+    "path": "Electronics > Accessories & Supplies > Cable Organizer Bags & Cases > Electronics",
+    "status": "ok",
+    "asins": 31
+  },
+  {
+    "url": "https://www.amazon.com/gp/new-releases/electronics/281407/ref=zg_bsnr_unv_electronics_2_290458_2",
+    "path": "Electronics > Accessories & Supplies > Cable Organizer Bags & Cases > Accessories & Supplies",
+    "status": "ok",
+    "asins": 31
+  }
+]

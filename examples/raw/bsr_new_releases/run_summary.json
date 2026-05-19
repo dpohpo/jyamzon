@@ -1,0 +1,90 @@
+{
+  "run_at": "2026-05-18T23:41:19.905977+00:00",
+  "target_count": 90,
+  "min_count": 50,
+  "max_category_pages": 260,
+  "roots": [
+    {
+      "source": "New Releases",
+      "department": "Electronics",
+      "path": "Electronics",
+      "url": "https://www.amazon.com/gp/new-releases/electronics",
+      "depth": 0
+    },
+    {
+      "source": "New Releases",
+      "department": "Computers & Accessories",
+      "path": "Computers & Accessories",
+      "url": "https://www.amazon.com/gp/new-releases/pc",
+      "depth": 0
+    },
+    {
+      "source": "New Releases",
+      "department": "Cell Phones & Accessories",
+      "path": "Cell Phones & Accessories",
+      "url": "https://www.amazon.com/gp/new-releases/wireless",
+      "depth": 0
+    },
+    {
+      "source": "New Releases",
+      "department": "Camera & Photo",
+      "path": "Camera & Photo",
+      "url": "https://www.amazon.com/gp/new-releases/photo",
+      "depth": 0
+    },
+    {
+      "source": "New Releases",
+      "department": "Video Games",
+      "path": "Video Games",
+      "url": "https://www.amazon.com/gp/new-releases/videogames",
+      "depth": 0
+    }
+  ],
+  "fallback_roots": [
+    {
+      "source": "Best Sellers",
+      "department": "Electronics",
+      "path": "Electronics",
+      "url": "https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics",
+      "depth": 0
+    },
+    {
+      "source": "Best Sellers",
+      "department": "Computers & Accessories",
+      "path": "Computers & Accessories",
+      "url": "https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc",
+      "depth": 0
+    },
+    {
+      "source": "Best Sellers",
+      "department": "Cell Phones & Accessories",
+      "path": "Cell Phones & Accessories",
+      "url": "https://www.amazon.com/Best-Sellers-Cell-Phones-Accessories/zgbs/wireless",
+      "depth": 0
+    },
+    {
+      "source": "Best Sellers",
+      "department": "Camera & Photo",
+      "path": "Camera & Photo",
+      "url": "https://www.amazon.com/Best-Sellers-Electronics-Camera-Photo-Products/zgbs/photo",
+      "depth": 0
+    },
+    {
+      "source": "Best Sellers",
+      "department": "Video Games",
+      "path": "Video Games",
+      "url": "https://www.amazon.com/Best-Sellers-Video-Games/zgbs/videogames",
+      "depth": 0
+    }
+  ],
+  "category_picks": 90,
+  "products_with_title": 89,
+  "products_with_price": 89,
+  "products_with_rating": 90,
+  "products_with_review_count": 82,
+  "products_with_five_bullets": 86,
+  "products_with_image": 89,
+  "products_with_local_image": 89,
+  "category_pages_attempted": 91,
+  "output_dir": "data/amazon_3c/bsr_new_releases"
+}

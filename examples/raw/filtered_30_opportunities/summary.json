@@ -1,0 +1,11 @@
+{
+  "run_at": "2026-05-19T00:42:30.706503+00:00",
+  "candidate_asins": 3297,
+  "detail_pages_attempted": 1500,
+  "accepted_pool": 23,
+  "selected": 23,
+  "rejected": 1477,
+  "category_pages": 220,
+  "selected_after_retry": 30,
+  "retry_attempted": 605
+}
