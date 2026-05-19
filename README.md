@@ -52,15 +52,19 @@ outputs/amazon_3c_bsr_new_releases/amazon_3c_new_releases_bsr_crawl.xlsx
 ### 2. Find 30 filtered non-big-brand opportunities
 
 ```bash
-python scripts/crawl_3c_filtered_opportunities_fast.py
-python scripts/retry_filtered_opportunity_details.py
-python scripts/build_filtered_30_opportunity_excel.py
+python scripts/run_filtered_30_pipeline.py --target 30 --retry-passes 2
 ```
 
 Output:
 
 ```text
 outputs/amazon_3c_filtered_opportunities/amazon_3c_bsr_filtered_30_opportunities.xlsx
+```
+
+Verify any handoff copy or rerun:
+
+```bash
+python scripts/verify_crawl_outputs.py --target 30
 ```
 
 ### 3. Optional crawler coverage audit
@@ -121,6 +125,11 @@ scripts/
   crawl_3c_filtered_opportunities.py       # filtering/scoring rules
   crawl_3c_filtered_opportunities_fast.py  # concurrent opportunity crawl
   retry_filtered_opportunity_details.py    # slow retry for blocked/missing detail pages
+  run_filtered_30_pipeline.py              # filtered crawl + retry + build + verification gate
+  verify_crawl_outputs.py                  # JSON/Excel consistency check
+  plan_retry_shards.py                     # distributed retry shard planner
+  run_detail_retry_shard.py                # isolated detail retry worker
+  merge_retry_shards.py                    # merge retry shard results
   build_filtered_30_opportunity_excel.py   # curated 30-opportunity Excel builder
   run_claude_crawler_audit.py              # optional crawler coverage audit
   install_claude_skill.sh                  # installs skills/jyamzon into ~/.claude/skills
@@ -128,6 +137,7 @@ scripts/
 skills/jyamzon/SKILL.md                    # Claude Code skill
 docs/SCORING.md                            # scoring and filtering rules
 docs/OPERATIONS.md                         # repeatable runbook
+docs/RELIABILITY.md                        # retry, verification, and shard strategy
 reports/                                   # prior crawler/MCP gap notes and HTML report
 examples/outputs/                          # sample workbooks from a real run
 examples/raw/                              # sample raw JSON/CSV artifacts from real runs
@@ -136,6 +146,8 @@ examples/raw/                              # sample raw JSON/CSV artifacts from 
 ## Operational Notes
 
 - Amazon pages can return empty/captcha/sign-in pages. The scripts keep status fields and retry paths because public scraping is not deterministic.
+- Use `detail_error` to distinguish captcha, sign-in, unavailable pages, and parser drift instead of assuming every missing title has the same cause.
+- If normal retry is not enough, plan bounded retry shards with `scripts/plan_retry_shards.py`, run shard commands separately, merge with `scripts/merge_retry_shards.py`, then rebuild and verify the Excel workbook.
 - Do not treat New Releases rank as proof of demand.
 - Do not treat empty review count as zero reviews.
 - Always manually review compliance risk for wireless, battery, power, charger, security camera, and child-use products.
