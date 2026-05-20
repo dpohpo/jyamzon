@@ -1,7 +1,7 @@
 [project]
 name = "jyamzon"
 version = "0.1.0"
-description = "Amazon 3C BSR/New Releases crawler and China-seller product selection skill"
+description = "Amazon 3C crawler, SellerSprite OpenCLI ASIN enrichment, and China-seller product selection skill"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -16,4 +16,3 @@ Homepage = "https://github.com/dpohpo/jyamzon"
 
 [tool.ruff]
 line-length = 120
-

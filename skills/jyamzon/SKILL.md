@@ -1,18 +1,19 @@
 ---
 name: jyamzon
-description: Crawl public Amazon US 3C BSR/New Releases pages, filter non-big-brand product-selection candidates, score China-seller feasibility, and export Excel workbooks. Use when the user asks for Amazon 3C product selection, BSR/new-release crawling, non-MCP Amazon research, ASIN discovery, China seller fit, opportunity/risk scoring, or reusable Amazon selection workflows.
+description: Crawl public Amazon US 3C pages and optionally enrich a known ASIN with granular SellerSprite web/extension data through OpenCLI, then export analyst-ready Excel workbooks. Use when the user says /jyamzon, $jyamzon, asks for Amazon 3C product selection, BSR/New Releases crawling, non-MCP Amazon research, ASIN discovery, SellerSprite OpenCLI scraping, related keyword extraction, China seller fit, opportunity scoring, or reusable Amazon selection workflows.
 ---
 
 # jyamzon
 
-Use this skill to run a local, non-MCP Amazon 3C product-selection workflow.
+Use this skill to run local Amazon 3C product-selection and ASIN enrichment workflows.
 
 ## Core Boundary
 
-- Uses public Amazon BSR/New Releases/category/detail pages only.
-- Does not call SellerSprite MCP, SP-API, Keepa, or paid APIs.
-- Good for discovery, triage, and building a shortlist.
-- Not sufficient for final decisions on search volume, purchases, PPC, sales, market concentration, or conversion data.
+- The crawler workflow uses public Amazon BSR/New Releases/category/detail pages only.
+- The OpenCLI enrichment workflow can read SellerSprite data already visible in the user's logged-in Chrome web page or SellerSprite extension overlay.
+- Neither workflow calls SellerSprite MCP, SP-API, Keepa, or paid APIs.
+- OpenCLI enrichment is not API parity. It is only as complete as the current page/plugin renders.
+- Excel outputs must be granular: one metric, identifier, boolean, date, or numeric value per cell. Keep raw blobs in JSON audit files, not workbook business sheets.
 
 ## Quick Start
 
@@ -39,6 +40,38 @@ python scripts/retry_filtered_opportunity_details.py
 python scripts/build_filtered_30_opportunity_excel.py
 ```
 
+Granular SellerSprite OpenCLI ASIN enrichment:
+
+```bash
+python scripts/collect_sellersprite_opencli_asin_keywords.py \
+  --asin B0CT9R7WN5 \
+  --keyword-miner-top 3
+```
+
+Prerequisites for OpenCLI enrichment:
+
+- Chrome has the OpenCLI Browser Bridge extension installed and connected.
+- The user is already logged in to SellerSprite web.
+- The SellerSprite Chrome extension is installed and active on Amazon product pages.
+- The OpenCLI session names are `amazonss` for Amazon pages and `sellersprite` for SellerSprite web pages.
+
+Output:
+
+```text
+data/sellersprite_opencli/sellersprite_opencli_asin_keywords_<ASIN>_<timestamp>.xlsx
+data/sellersprite_opencli/sellersprite_opencli_asin_keywords_<ASIN>_<timestamp>.json
+```
+
+Workbook sheets:
+
+- `ASIN_Summary`: one row per product metric.
+- `Keyword_Reverse_Rows`: one row per SellerSprite web keyword-reverse result for the ASIN.
+- `Primary_Traffic_Keywords`: one row per extension-visible keyword with separate rank, share, type, and ad fields.
+- `Inventory_Offers`: one row per visible inventory/offer.
+- `Traffic_Source_Products`: one row per related ASIN from SellerSprite traffic source.
+- `Keyword_Miner_Rows`: optional expansion for top visible traffic keywords.
+- `Run_Metadata`: provenance and boundary notes.
+
 The filtered crawler defaults to stable detail fetching: one detail worker, 0.35s sleep, 15s timeout, and 2 retries. Keep those defaults when the user prioritizes completeness. A measured speed option is `--detail-workers 2 --detail-sleep 0.35 --detail-retries 2`; avoid higher concurrency unless you re-run the benchmark.
 
 ## Workflow
@@ -48,14 +81,15 @@ The filtered crawler defaults to stable detail fetching: one detail worker, 0.35
 3. Run `crawl_3c_filtered_opportunities_fast.py` to collect non-duplicate candidates and apply hard filters.
 4. Run `retry_filtered_opportunity_details.py` if selected count is below 30 or many detail pages are missing fields.
 5. Build the final workbook with `build_filtered_30_opportunity_excel.py`.
-6. In the final response, report:
+6. For OpenCLI ASIN enrichment, run `collect_sellersprite_opencli_asin_keywords.py` and inspect the workbook sheet counts before reporting success.
+7. In the final response, report:
    - workbook path
    - candidate count
    - detail pages attempted
    - final selected count
    - key data limitations
-7. If the user asks what crawler-only data can replace MCP/API calls, run `scripts/run_claude_crawler_audit.py --skip-reviews` when a Claude Amazon crawler is available, then summarize field coverage and gaps.
-8. If detail-page success drops, run `scripts/benchmark_detail_fetch_params.py` and compare `core_success_rate` across workers/sleep settings before changing production defaults.
+8. If the user asks what crawler-only data can replace MCP/API calls, run `scripts/run_claude_crawler_audit.py --skip-reviews` when a Claude Amazon crawler is available, then summarize field coverage and gaps.
+9. If detail-page success drops, run `scripts/benchmark_detail_fetch_params.py` and compare `core_success_rate` across workers/sleep settings before changing production defaults.
 
 ## Hard Filters
 
